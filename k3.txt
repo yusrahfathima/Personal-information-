@@ -1,0 +1,60 @@
+<html>
+  <head>
+    <title>Personal Information System</title>
+  </head>
+  <body style="background-color:lightblue;">
+    <h1>Personal Information System</h1>
+    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+      <p>
+        Please enter a day of the week:
+        <input type="text" name="day" />
+      </p>
+      <input type="submit" value="Submit" />
+    </form>
+    <?php
+      if (isset($_POST['day'])) {
+        $day = $_POST['day'];
+
+        switch ($day) {
+          case "Monday":
+            echo "<p>Wake up at 6:00am.</p>";
+            echo "<p>Get ready for work.</p>";
+            echo "<p>Leave for work at 8:00am.</p>";
+            break;
+          case "Tuesday":
+            echo "<p>Go to the gym at 6:00am.</p>";
+            echo "<p>Eat breakfast.</p>";
+            echo "<p>Go to work at 9:00am.</p>";
+            break;
+          case "Wednesday":
+            echo "<p>Attend a meeting at 8:00am.</p>";
+            echo "<p>Go to lunch with colleagues.</p>";
+            echo "<p>Leave work at 5:00pm.</p>";
+            break;
+          case "Thursday":
+            echo "<p>Go to the grocery store at 6:00pm.</p>";
+            echo "<p>Watch a movie.</p>";
+            echo "<p>Go to bed at 10:00pm.</p>";
+            break;
+          case "Friday":
+            echo "<p>Go to the office at 9:00am.</p>";
+            echo "<p>Have lunch with friends.</p>";
+            echo "<p>Leave work at 5:00pm.</p>";
+            break;
+          case "Saturday":
+            echo "<p>Attend a yoga class at 9:00am.</p>";
+            echo "<p>Go to the park.</p>";
+            echo "<p>Have a relaxing evening at home.</p>";
+            break;
+          case "Sunday":
+            echo "<p>Attend church at 10:00am.</p>";
+            echo "<p>Go to lunch with family.</p>";
+            echo "<p>Spend the rest of the day relaxing.</p>";
+            break;
+          default:
+            echo "<p>Invalid day.</p>";
+        }
+      }
+    ?>
+  </body>
+</html>
